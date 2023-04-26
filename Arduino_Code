@@ -1,0 +1,28 @@
+void setup() {
+  Serial.begin(9600);
+  pinMode(A0,INPUT);
+  pinMode(A1,INPUT);
+  pinMode(A2,INPUT);
+  pinMode(A3,INPUT);
+}
+
+void loop() {
+  // Reading potentiometer value
+  float a = analogRead(A0);
+  a = map(a, 0, 1023, 0, 100);
+  float b = analogRead(A1);
+  b = map(b, 0, 1023, 0, 100);
+  float c = analogRead(A2);
+  c = map(c, 0, 1023, 0, 100);
+  float d = analogRead(A3);
+  d = map(d, 0, 1023, 0, 100);
+  Serial.print(a);
+  Serial.print(",");
+  Serial.print(b);
+  Serial.print(",");
+  Serial.print(c);
+  Serial.print(",");
+  Serial.print(d);
+  Serial.print(",");
+  Serial.println("test");
+}
